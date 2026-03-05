@@ -43,30 +43,28 @@
 .hero-image {
   display: block;
   width: 90%; 
-  height: 80vh; 
   margin-left: auto;
   margin-right: auto;
-  margin-top: 107px;
+  height: 70vh; 
 
-  /* 1. Сохраняем пропорции */
-  object-fit: cover;
+  object-fit: cover; 
   object-position: center;
 
-  /* 2. ЗАПРЕЩАЕМ ТРАНСФОРМАЦИИ (ЗУМ) */
-  /* Если скрипт меняет scale, это его остановит */
-  transform: none !important; 
-  
-  /* 3. ФИКСИРУЕМ КАРТИНКУ */
-  /* Это заставит её стоять на месте, пока сайт проезжает мимо */
-  position: relative; 
-  overflow: hidden;
-
-  /* 4. Твои эффекты */
+  margin-top: 107px;
   filter: drop-shadow(0 3px 4px rgba(0, 0, 0, .55));
+
+  /* --- НОВЫЕ СТРОКИ ДЛЯ СТАБИЛИЗАЦИИ --- */
   
-  /* Дополнительная защита от "прыжков" */
-  max-width: 90% !important;
-  max-height: 80vh !important;
+  /* 1. Говорим браузеру заранее, что трансформация будет (это иногда "обманывает" скрипты) */
+  will-change: auto; 
+
+  /* 2. Запрещаем картинке выходить за свои рамки при любом раскладе */
+  max-width: 90%;
+  max-height: 70vh;
+
+  /* 3. Если скрипт использует стандартный зум через transform, 
+     эта строка может его перебить, не ломая позицию (top/left) */
+  transform: scale(1) !important; 
 }
 </style>
    <div class="course-info-hero">
@@ -918,6 +916,7 @@ document.addEventListener('DOMContentLoaded', function() {
   </body>
 
 </html>
+
 
 
 
