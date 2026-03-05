@@ -41,46 +41,15 @@
 
 <style>
 .hero-image {
-  /* 1. ФИКСИРУЕМ ОТНОСИТЕЛЬНО ОКНА, НО ОГРАНИЧИВАЕМ */
-  position: absolute; /* Вырываем из-под влияния скролл-скрипта */
-  top: 107px; /* Твой начальный отступ */
-  left: 50%;
-  transform: translateX(-50%) !important; /* Центрируем и блокируем сдвиги скрипта */
-  
-  /* 2. ГЕОМЕТРИЯ */
-  width: 90%; 
-  height: 70vh; 
-  
-  /* 3. ЗАПРЕТ НА РОСТ И ТЯНУЧЕСТЬ */
-  object-fit: contain; /* PNG сохраняет пропорции */
-  object-position: center bottom;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 75vh;
 
-  /* 4. СЛОИ */
-  z-index: 0; /* Она будет под текстом, который пойдет следом */
-
-  /* 5. УБИВАЕМ ВСЕ МАНИПУЛЯЦИИ СКРИПТА */
-  /* Это запретит скрипту Webflow менять масштаб и двигать её */
-  margin: 0 auto !important;
-  transition: none !important;
-  pointer-events: none; /* Чтобы можно было кликать сквозь неё на кнопки сайта */
+  margin-top: 107px;
 
   filter: drop-shadow(0 3px 4px rgba(0, 0, 0, .55));
-}
-
-/* 6. ЧТОБЫ ОНА УХОДИЛА ВВЕРХ, А НЕ ЕЗДИЛА ЗА ТОБОЙ: */
-/* Мы должны убедиться, что родитель (body или первый блок) имеет position: relative */
-body {
-  position: relative;
-}
-
-/* 7. САМОЕ ВАЖНОЕ: СЛЕДУЮЩИЙ БЛОК ДОЛЖЕН ЕЁ ПЕРЕКРЫВАТЬ */
-/* Судя по твоему коду, это может быть какой-то div после картинки. 
-   Дай ему фон, чтобы он работал как "шторка" */
-.section-7, .section-8 { /* Замени на класс своего следующего блока */
-  position: relative;
-  z-index: 10;
-  background-color: #ffffff; /* Твой цвет фона */
-  margin-top: 75vh; /* Делаем отступ, чтобы сначала была видна только картинка */
 }
 </style>
    <div class="course-info-hero">
@@ -932,6 +901,7 @@ document.addEventListener('DOMContentLoaded', function() {
   </body>
 
 </html>
+
 
 
 
