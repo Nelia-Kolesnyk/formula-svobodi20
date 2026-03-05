@@ -42,29 +42,23 @@
 <style>
 .hero-image {
   display: block;
-  width: 90%; 
+  /* 1. Уменьшаем сам блок (рамку) */
+  width: 90%; /* Или 85%, подбери, как тебе нравится визуально */
+  
+  /* 2. Центрируем уменьшенный блок на странице */
   margin-left: auto;
   margin-right: auto;
-  height: 70vh; 
+  
+  /* 3. Задаем высоту (лучше в vh, это стабильнее) */
+  height: 70vh; /* Попробуй 70vh, если 80vh слишком много */
 
-  object-fit: cover; 
-  object-position: center;
+  /* 4. ГЛАВНОЕ: Сохраняем пропорции внутри уменьшенной рамки */
+  object-fit: cover; /* Теперь она заполняет только 90% ширины, не деформируясь */
+  object-position: center; /* Центрируем лицо/важные детали */
 
+  /* Твои старые стили */
   margin-top: 107px;
   filter: drop-shadow(0 3px 4px rgba(0, 0, 0, .55));
-
-  /* --- НОВЫЕ СТРОКИ ДЛЯ СТАБИЛИЗАЦИИ --- */
-  
-  /* 1. Говорим браузеру заранее, что трансформация будет (это иногда "обманывает" скрипты) */
-  will-change: auto; 
-
-  /* 2. Запрещаем картинке выходить за свои рамки при любом раскладе */
-  max-width: 90%;
-  max-height: 70vh;
-
-  /* 3. Если скрипт использует стандартный зум через transform, 
-     эта строка может его перебить, не ломая позицию (top/left) */
-  transform: scale(1) !important; 
 }
 </style>
    <div class="course-info-hero">
@@ -916,6 +910,7 @@ document.addEventListener('DOMContentLoaded', function() {
   </body>
 
 </html>
+
 
 
 
