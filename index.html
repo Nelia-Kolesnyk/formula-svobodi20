@@ -42,16 +42,21 @@
 <style>
 .hero-image {
   display: block;
+  width: 100%;       /* Растягиваем по ширине */
+  height: auto;      /* ВАЖНО: высота сама рассчитается по пропорциям файла */
+  
+  /* Если хочешь, чтобы она не была слишком огромной на длинных экранах */
+  max-width: 100%;
+  
+  /* Центрирование */
   margin-left: auto;
   margin-right: auto;
-  width: 100%;
-  height: 100%; /* Теперь это не растянет фото, а задаст размер рамки */
   
-  object-fit: cover; /* Картинка заполнит всё пространство, лишнее обрежется */
-  /* ИЛИ */
-  object-fit: contain; /* Картинка впишется целиком, могут появиться пустые поля */
+  /* Твой отступ */
+  margin-top: 107px; 
 
-  margin-top: 107px;
+  /* Тень (с поддержкой iOS) */
+  -webkit-filter: drop-shadow(0 3px 4px rgba(0, 0, 0, .55));
   filter: drop-shadow(0 3px 4px rgba(0, 0, 0, .55));
 }
 </style>
@@ -904,6 +909,7 @@ document.addEventListener('DOMContentLoaded', function() {
   </body>
 
 </html>
+
 
 
 
