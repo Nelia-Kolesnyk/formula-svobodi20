@@ -42,23 +42,31 @@
 <style>
 .hero-image {
   display: block;
-  /* 1. Уменьшаем сам блок (рамку) */
-  width: 90%; /* Или 85%, подбери, как тебе нравится визуально */
-  
-  /* 2. Центрируем уменьшенный блок на странице */
+  width: 90%; 
+  height: 80vh; 
   margin-left: auto;
   margin-right: auto;
-  
-  /* 3. Задаем высоту (лучше в vh, это стабильнее) */
-  height: 70vh; /* Попробуй 70vh, если 80vh слишком много */
-
-  /* 4. ГЛАВНОЕ: Сохраняем пропорции внутри уменьшенной рамки */
-  object-fit: cover; /* Теперь она заполняет только 90% ширины, не деформируясь */
-  object-position: center; /* Центрируем лицо/важные детали */
-
-  /* Твои старые стили */
   margin-top: 107px;
+
+  /* 1. Сохраняем пропорции */
+  object-fit: cover;
+  object-position: center;
+
+  /* 2. ЗАПРЕЩАЕМ ТРАНСФОРМАЦИИ (ЗУМ) */
+  /* Если скрипт меняет scale, это его остановит */
+  transform: none !important; 
+  
+  /* 3. ФИКСИРУЕМ КАРТИНКУ */
+  /* Это заставит её стоять на месте, пока сайт проезжает мимо */
+  position: relative; 
+  overflow: hidden;
+
+  /* 4. Твои эффекты */
   filter: drop-shadow(0 3px 4px rgba(0, 0, 0, .55));
+  
+  /* Дополнительная защита от "прыжков" */
+  max-width: 90% !important;
+  max-height: 80vh !important;
 }
 </style>
    <div class="course-info-hero">
@@ -910,6 +918,7 @@ document.addEventListener('DOMContentLoaded', function() {
   </body>
 
 </html>
+
 
 
 
