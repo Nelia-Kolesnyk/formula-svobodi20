@@ -42,21 +42,16 @@
 <style>
 .hero-image {
   display: block;
-  width: 100%;       /* Растягиваем по ширине */
-  height: auto;      /* ВАЖНО: высота сама рассчитается по пропорциям файла */
-  
-  /* Если хочешь, чтобы она не была слишком огромной на длинных экранах */
-  max-width: 100%;
-  
-  /* Центрирование */
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
+  height: 100%; /* Теперь это не растянет фото, а задаст размер рамки */
   
-  /* Твой отступ */
-  margin-top: 112px; 
+  object-fit: cover; /* Картинка заполнит всё пространство, лишнее обрежется */
+  /* ИЛИ */
+  object-fit: contain; /* Картинка впишется целиком, могут появиться пустые поля */
 
-  /* Тень (с поддержкой iOS) */
-  -webkit-filter: drop-shadow(0 3px 4px rgba(0, 0, 0, .55));
+  margin-top: 107px;
   filter: drop-shadow(0 3px 4px rgba(0, 0, 0, .55));
 }
 </style>
@@ -554,30 +549,7 @@
           <div class="format-card dark">
             <img src="https://cdn.prod.website-files.com/691f0e9c0fa872f2a174f07e/6921e5bd7bff967db3e229bb_Mask%20group.png" loading="lazy" sizes="(max-width: 846px) 100vw, 846px, 100vw" srcset="https://cdn.prod.website-files.com/691f0e9c0fa872f2a174f07e/6921e5bd7bff967db3e229bb_Mask%20group-p-500.png 500w, https://cdn.prod.website-files.com/691f0e9c0fa872f2a174f07e/6921e5bd7bff967db3e229bb_Mask%20group-p-800.png 800w, https://cdn.prod.website-files.com/691f0e9c0fa872f2a174f07e/6921e5bd7bff967db3e229bb_Mask%20group.png 846w" alt="" class="format-image" />
             <div class="div-block-6">
-
-
-
-
-              <img src="nelya-tarif.png" class="hero-tarif" >
-
-              <style>
-              .hero-tarif {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-
-
-  filter: drop-shadow(0 3px 4px rgba(0, 0, 0, .55));
-}
-</style>
-
-
-
-
-
+              <img src="https://cdn.prod.website-files.com/691f0e9c0fa872f2a174f07e/6921e5fc6cc72b0fe879eb3e_Group%201321317246.png" loading="lazy" sizes="(max-width: 1018px) 100vw, 1018px, 100vw" srcset="https://cdn.prod.website-files.com/691f0e9c0fa872f2a174f07e/6921e5fc6cc72b0fe879eb3e_Group%201321317246-p-500.png 500w, https://cdn.prod.website-files.com/691f0e9c0fa872f2a174f07e/6921e5fc6cc72b0fe879eb3e_Group%201321317246-p-800.png 800w, https://cdn.prod.website-files.com/691f0e9c0fa872f2a174f07e/6921e5fc6cc72b0fe879eb3e_Group%201321317246.png 1018w" alt="" class="format-heading-image big" />
               <div class="div-block-7 white">
                 <div>
                   <strong>•</strong> Закритий Telegram-чат персонального супроводу
@@ -923,7 +895,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- <div class="dotted-line"></div> -->
           <!-- <a href="https://t.me/Kolesnyk_team" target="_blank" class="button w-button">забронювати місце</a> -->
           <div class="fop-info">
-            <div class="text-block-11">ФОП Костенко Ольга Володимирівна <br />ІПН: 2191604463 <br /></div>
+            <div class="text-block-11">ФОП Довжинець Тетяна Євгеніївна <br />ІПН: 2622010842 <br /></div>
           </div>
         </div>
       </section>
@@ -932,26 +904,6 @@ document.addEventListener('DOMContentLoaded', function() {
   </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
